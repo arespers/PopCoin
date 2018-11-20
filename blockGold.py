@@ -6,7 +6,7 @@ import hashlib
 import sys
 from getpass import getpass
 from Cryptodome.Cipher import AES
-from crankycoin import *
+#from crankycoin import *
 
 # Import for the GUI
 import Tkinter as tk
