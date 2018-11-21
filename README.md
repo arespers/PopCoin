@@ -1,15 +1,8 @@
 # N U G G E T S
 
-A Cryptocurrency by BlockGold
+A Cryptocurrency by BlockGold, enhanced by PopCoin
 
-#### TODO:
-1. ~~Solve issues with genesis null transactions in genesis block block~~ 
-2. ~~Establish peer-to-peer network~~
-3. Finish Miner
-4. Create game to populate currency
-5. ~~Check PrivateKey creation~~
-
-#### INSTALATION
+#### INSTALLATION
 1. Download the Kali Linux iso (kali.org)
 * Assuming you have virtual box already installed
 2. Start Virtual Box and the "New" button on the top left
@@ -25,7 +18,7 @@ Requirements:
 VirtualBox application
 Kali Linux operating system for virtualbox
 
-Steps to run 
+Steps to run:
 
 1. Open virtual box
 2. Open kali linux 2018 disc file 
