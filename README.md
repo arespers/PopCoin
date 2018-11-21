@@ -19,9 +19,36 @@ A Cryptocurrency by BlockGold
 6. Set the next variable to the variables needed for your machine.
 
 #### RUN PROGRAM
-1. Run Virtual Box (Kali Linux)
-2. Open terminal
-3. In terminal: cd crankycoin 
-3. Run vitual enviornment: Source venev/bin/actiate 
-4. In order to open wallet: python blockGold.py 
+README File for Running BlockGold
+
+Requirements:
+VirtualBox application
+Kali Linux operating system for virtualbox
+
+Steps to run 
+
+1. Open virtual box
+2. Open kali linux 2018 disc file 
+3. Click start to load virtual environment 
+4. Click kali GNU/ Linux (if prompt asks)
+5. Input Username “root”
+6. Input Password  “toor”
+7. Kali linux user interface should fully load
+8. Click “terminal” to open terminal application
+9. Type: cd Desktop in the command line
+10. Type: cd ‘Software Project’
+11. Type: ls (to find all items within the directory) (l = lowercase L)
+12. Type: cd ‘Product Delivery’
+13. Type: cd BlockGold 
+14. Type: cd ‘Blockgold I5’
+15. Type: ls (to check id you are in correct directory) (l = lowercase L)
+16. Type: cd crankcoin-mw
+17. Type: cd crankycoin-mw
+18. Type: cd crankycoin-mw 
+19. Type: ls (to find all items within the directory) 
+20. Source venew/bin/activate
+21. Python blockGold.py 
+22. Click Enter (this will take a few minutes to run)
+23. Login Page will pop up and user can enter password 
+
 
