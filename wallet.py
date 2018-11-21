@@ -5,12 +5,11 @@ import time
 
 from blockchain import *
 from config import *
-from node import NodeMixin
+from anytree import NodeMixin
 from transaction import *
 
 
 class Client(NodeMixin):
-
     __private_key__ = None
     __public_key__ = None
 
@@ -18,7 +17,7 @@ class Client(NodeMixin):
         if private_key is not None:
             self.__private_key__ = coincurve.PrivateKey.from_hex(private_key)
         else:
-            #logger.info("No private key provided. Generating new key pair.")
+            # logger.info("No private key provided. Generating new key pair.")
             self.__private_key__ = coincurve.PrivateKey()
         self.__public_key__ = self.__private_key__.public_key
 
@@ -42,24 +41,22 @@ class Client(NodeMixin):
         if node is None:
             node = random.sample(self.full_nodes, 1)[0]
         url = self.BALANCE_URL.format(node, self.FULL_NODE_PORT, address)
-        #try:
+        # try:
         transactions = config['network']['block_path']
         nuggets = 0
         for i in range(0, len(transactions)):
             pointer = '{}'.format(transactions[i])
-            for j in range(0,len(bcinfo[pointer]['transactions'])):
+            for j in range(0, len(bcinfo[pointer]['transactions'])):
                 if bcinfo[pointer]['transactions']['{}'.format(j)]['destination'] == config['user']['public_key']:
                     nuggets = nuggets + bcinfo[pointer]['transactions']['{}'.format(j)]['amount']
                 elif bcinfo[pointer]['transactions']['{}'.format(j)]['source'] == config['user']['public_key']:
                     nuggets = nuggets - bcinfo[pointer]['transactions']['{}'.format(j)]['amount']
-        #response = requests.get(url)
-        #return response.json()
+        # response = requests.get(url)
+        # return response.json()
         return nuggets
         # except requests.exceptions.RequestException as re:
         #     pass
         # return None
-
-
 
     def get_transaction_history(self, address=None, node=None):
         if address is None:
@@ -90,7 +87,7 @@ class Client(NodeMixin):
         # transaction.sign(self.get_private_key())
         # return self.broadcast_transaction(transaction)
         blockchain = config['network']['block_path']
-        new_block = Block((len(blockchain)-1),currency, blockchain[-1], timestamp=int(time.time()))
+        new_block = Block((len(blockchain) - 1), currency, blockchain[-1], timestamp=int(time.time()))
         config['network']['block_path'].append(new_block.current_hash)
         update()
 

@@ -4,10 +4,14 @@ from __future__ import print_function
 
 import argparse
 import hashlib
+import socket
 import sys
 from getpass import getpass
+
+import config
 from Cryptodome.Cipher import AES
-from crankycoin import *
+from wallet import Client
+#from crankycoin import *
 
 _PY3 = sys.version_info[0] > 2
 if _PY3:
@@ -79,17 +83,17 @@ def client():
 
 
 def connect():
-    host = '10.0.2.15'
+    host = '0.0.0.0'
     # host =  '137.198.12.190'
-    port = 5000
+    port = 5000  # type: int
 
-    ip = '10.0.2.15'
+    ip = '137.198.12.99'
     # print(ip)
     public_key = config['user']['public_key']
     fullNode = FullNode(ip, public_key)
     s = socket.socket()
     s.bind((host, port))
-    myaddr = '137.198.12.190'
+    myaddr = '137.198.12.99'
 
     s.listen(1)
     c, addr = s.accept()
@@ -276,7 +280,7 @@ def miner():
         except IndexError:
             pass
 
-
+'''
 def main(argv):
     parser = argparse.ArgumentParser(description='Starts a ' + config['network']['name'] + ' node')
     parser.add_argument('mode', metavar='type', nargs='?', default=None, help='client | full | miner')
@@ -293,3 +297,4 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv[1:])
+'''
